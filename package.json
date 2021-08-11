@@ -1,6 +1,6 @@
 {
 	"name": "homebridge-air-detector",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Xiaomi Clear Grass(S1) plugin for Homebridge.",
 	"author": "adamsandwich <adamsandwich@outlook.com>",
 	"license": "MIT",

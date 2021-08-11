@@ -312,15 +312,17 @@ ClearGrassAirMonitor.prototype = {
             callback(null, Characteristic.CarbonDioxideDetected.CO2_LEVELS_NORMAL);
         }
         else {
-            let url = `${BARK_PUSH_URL}/${barkToken}/CO2 deteced ${this.co2} pmm. Please check.`;
-            this.log.info('bark url: %s', url);
-            axios.get(url)
-                .then(function (response) {
-                    this.log.debug(response);
-                })
-                .catch(function (error) {
-                    this.log.debug(error);
-                });
+            if (this.barkPush) {
+                let url = `${BARK_PUSH_URL}/${this.barkToken}/CO2 deteced ${this.co2} pmm. Please check.`;
+                this.log.info('bark url: %s', url);
+                axios.get(url)
+                    .then(function (response) {
+                        this.log.debug(response);
+                    })
+                    .catch(function (error) {
+                        this.log.debug(error);
+                    });
+            }
             callback(null, Characteristic.CarbonDioxideDetected.CO2_LEVELS_ABNORMAL);
         }
     },
