@@ -1,0 +1,25 @@
+{
+	"name": "homebridge-air-detector",
+	"version": "0.0.1",
+	"description": "Xiaomi Clear Grass(S1) plugin for Homebridge.",
+	"author": "adamsandwich <adamsandwich@outlook.com>",
+	"license": "MIT",
+	"main": "index.js",
+	"keywords": [
+		"homebridge-plugin",
+		"xiaomi",
+		"Clear Grass ",
+		"air monitor",
+		"cleargrass",
+		"air detector"
+	],
+	"engines": {
+		"node": ">=0.12.0",
+		"homebridge": ">=0.4.0",
+		"miio": ">=0.15.6"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"miio": "^0.15.6"
+	}
+}
