@@ -312,7 +312,9 @@ ClearGrassAirMonitor.prototype = {
             callback(null, Characteristic.CarbonDioxideDetected.CO2_LEVELS_NORMAL);
         }
         else {
-            axios.get(`${BARK_PUSH_URL}/${barkToken}/CO2 deteced ${this.co2} pmm. Please check.`)
+            let url = `${BARK_PUSH_URL}/${barkToken}/CO2 deteced ${this.co2} pmm. Please check.`;
+            this.log.info('bark url: %s', url);
+            axios.get(url)
                 .then(function (response) {
                     this.log.debug(response);
                 })
